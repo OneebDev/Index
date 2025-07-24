@@ -1,0 +1,100 @@
+#translate-widget {
+  position: fixed;
+  bottom: 80px;
+  right: 20px;
+  z-index: 9999;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+#translate-btn {
+  position: relative;
+  background: #111;
+  color: #fff;
+  padding: 14px 26px;
+  border: none;
+  border-radius: 50px;
+  font-size: 16px;
+  cursor: pointer;
+  overflow: hidden;
+  z-index: 1;
+}
+
+#translate-btn::before {
+  content: "";
+  position: absolute;
+  top: -4px;
+  left: -4px;
+  right: -4px;
+  bottom: -4px;
+  background: conic-gradient(
+    from 0deg,
+    #00f0ff,
+    #0066ff,
+    #ff00ff,
+    #ff0000,
+    #00f0ff
+  );
+  z-index: -1;
+  border-radius: 60px;
+  animation: rotateGlow 3s linear infinite;
+}
+
+#translate-btn::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  right: 2px;
+  bottom: 2px;
+  background: #111;
+  border-radius: 50px;
+  z-index: -1;
+}
+
+@keyframes rotateGlow {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+#translate-btn span {
+  position: relative;
+  z-index: 2;
+  font-weight: bold;
+}
+
+/* ✅ Dropdown Hidden Class */
+.dropdown-hidden {
+  display: none;
+}
+.dropdown-hidden {
+  display: none !important;
+}
+
+/* ✅ Visible Dropdown Styling */
+#language-options {
+  margin-top: 10px;
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  animation: fadeIn 0.3s ease;
+}
+
+#language-options button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+#language-options button:hover {
+  background-color: #0056b3;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
